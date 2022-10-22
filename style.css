@@ -9,12 +9,12 @@ body {
 }
 
 .main_h {
-  background-color: rgba(255, 255, 255, 0.5);
   line-height: 70px;
   height: 70px;
   width: 100%;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  color: #8f8f8f;
 }
 
 .sticky {
@@ -29,28 +29,10 @@ body {
 .logo {
   width: 50px;
   font-size: 25px;
-  color: #8f8f8f;
   text-transform: uppercase;
   float: left;
   display: block;
-  margin-top: 0;
-  line-height: 1;
   margin-bottom: 10px;
-}
-
-@media only screen and (max-width: 766px) {
-  .logo {
-    float: none;
-  }
-}
-
-nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
 }
 
 nav a {
@@ -64,7 +46,7 @@ nav a {
   border: 3px solid transparent;
   border-bottom: 4px solid transparent;
   border-radius: 50px;
-  color: black;
+  color: #2b2828;
 }
 
 nav a:hover {
@@ -120,6 +102,14 @@ nav a:hover {
   .grid-container {
     -ms-grid-columns: auto auto;
         grid-template-columns: auto auto;
+  }
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
   .intra-container,
   .grid-container,
@@ -242,8 +232,8 @@ nav a:hover {
 
 #show_image_popup {
   background-color: white;
-  position: absolute;
-  bottom: -200%;
+  position: fixed;
+  top: 300px;
   left: 50%;
   z-index: 1000;
   -webkit-transform: translate(-50%, -50%);
@@ -254,5 +244,57 @@ nav a:hover {
 
 #show_image_popup img {
   height: 350px;
+}
+
+.open-nav {
+  background: whitesmoke;
+  height: 350px;
+}
+
+.open-nav .mobile-toggle {
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+}
+
+.mobile-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  right: 22px;
+  top: 20px;
+  width: 30px;
+  -webkit-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+
+.mobile-toggle span {
+  width: 30px;
+  height: 4px;
+  margin-bottom: 6px;
+  border-radius: 1000px;
+  background: #8f8f8f;
+  display: block;
+}
+
+@media (max-width: 649px) {
+  .mainImage img,
+  .intra-container img {
+    width: 100vw;
+    max-height: 300px;
+  }
+  #show_image_popup img {
+    max-width: 90vw;
+    height: 200px;
+  }
+  .mobile-toggle {
+    display: block;
+  }
+  nav ul {
+    display: none;
+  }
+  nav li a {
+    padding: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */
